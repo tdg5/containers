@@ -1,0 +1,22 @@
+{
+  "builders": [
+    {
+      "commit": true,
+      "image": "ubuntu:14.04.2",
+      "type": "docker",
+      "name": "ubuntu-14.04.2-server-amd64"
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "repository": "tdg5/ubuntu-14.04.2-server-amd64",
+        "tag": "0.0.1",
+        "type": "docker-tag"
+      },
+      {
+        "type": "docker-push"
+      }
+    ]
+  ]
+}
